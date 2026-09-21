@@ -1,0 +1,27 @@
+name: validate expansion
+
+on:
+  push:
+    paths:
+      - "config/expansion.json"
+      - "engine/abi/**"
+      - "tools/validate_expansion.py"
+      - "tests/test_expansion_contract.py"
+      - ".github/workflows/validate-expansion.yml"
+  pull_request:
+    paths:
+      - "config/expansion.json"
+      - "engine/abi/**"
+      - "tools/validate_expansion.py"
+      - "tests/test_expansion_contract.py"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - run: python tools/validate_expansion.py
+      - run: python -m unittest discover -s tests -v
