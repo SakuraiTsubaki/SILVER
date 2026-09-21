@@ -3,17 +3,26 @@ name: validate expansion
 on:
   push:
     paths:
+      - "analysis/rom-save-baseline.json"
       - "config/expansion.json"
+      - "config/legacy_save_profiles.json"
       - "engine/abi/**"
+      - "tools/inspect_silver_inputs.py"
+      - "tools/detect_legacy_profile.py"
       - "tools/validate_expansion.py"
-      - "tests/test_expansion_contract.py"
+      - "tests/**"
       - ".github/workflows/validate-expansion.yml"
   pull_request:
     paths:
+      - "analysis/rom-save-baseline.json"
       - "config/expansion.json"
+      - "config/legacy_save_profiles.json"
       - "engine/abi/**"
+      - "tools/inspect_silver_inputs.py"
+      - "tools/detect_legacy_profile.py"
       - "tools/validate_expansion.py"
-      - "tests/test_expansion_contract.py"
+      - "tests/**"
+      - ".github/workflows/validate-expansion.yml"
 
 jobs:
   validate:
