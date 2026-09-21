@@ -1,46 +1,28 @@
 # SILVER
 
-Modernized **Pokémon Silver / Pocket Monsters Gin** project.
+**ポケットモンスター 銀** (Generation II)를 **Game Boy Advance / Generation III 계열 기반의 현대화 리메이크**로 재구축하는 저장소입니다.
 
-Expansion work is driven by the actual Silver ROM and save formats first, then widened for later-generation content.
+## 현재 정본 방향
 
-## Verified baseline used by this repository
+- 일본판 원작과 모든 확인된 revision을 원전으로 전수조사합니다.
+- 원작의 지역, 스토리, 이벤트, NPC, 버전 고유 요소는 보존합니다.
+- 포켓몬/타입/특성/기술/진화/폼/아이템/전투·육성 규칙은 현재 검증 가능한 최신 공식 기준으로 현대화합니다.
+- 최종 실행 대상은 **GBA**입니다.
+- GB/GBC mapper, SRAM, 원본 주소 구조는 원본 분석 자료로 보존하지만 최종 런타임 엔진으로 사용하지 않습니다.
+- 미출시·미검증 세대 콘텐츠는 추측하지 않습니다.
 
-The inspected retail ROM set contains Japanese Rev.0/Rev.1, Korean, English, German, French, Italian and Spanish Silver.
+## 기반
 
-Observed hardware facts:
+- 원본 조사: `SakuraiTsubaki/PocketMonsters-Gin-Disassembly`
+- 공통 현대화 연구: `SakuraiTsubaki/EMERALD`
+- 현대 코어 기준: `rh-hideout/pokeemerald-expansion@75b806a3ab57a81ff1eb6179288981f0b3cc3050`
 
-- cartridge type `0x10`: MBC3 + timer + RAM + battery
-- 32 KiB SRAM on every inspected ROM
-- Japanese ROMs: 1 MiB
-- Korean/Western localized ROMs: 2 MiB
-- supplied save files: 32 KiB raw SRAM + 44 bytes of host-side trailing data
+## 문서
 
-The legacy save layouts are **not one format**:
+- `PROJECT.md` — 현재 프로젝트 방향의 정본
+- `config/remake.json` — 기계 판독 가능한 작품/엔진/원본 기준
+- `docs/REMAKE_POLICY.md` — 원작 보존과 최신화 정책
 
-- Japanese: 9 boxes × 30 Pokémon, 50 Hall of Fame teams
-- Korean: 14 boxes × 20 Pokémon, 30 Hall of Fame teams
-- Western: 14 boxes × 20 Pokémon, 30 Hall of Fame teams
+저장소에 남아 있는 이전 확장 설계 문서와 도구는 삭제하지 않습니다. 원본 구조·세이브·ID·용량 연구 자료로 보존하며, GBA 리메이크에 필요한 내용만 새 런타임 설계로 옮깁니다.
 
-See `analysis/rom-save-baseline.json`,
-`config/legacy_save_profiles.json`, and
-`docs/ROM_SAVE_EXPANSION_BASELINE.md`.
-
-## Expansion direction
-
-The new engine ABI widens species/form/move/item/ability identities to 16-bit,
-but legacy SRAM is imported through region-specific read-only decoders rather
-than rewritten in place.
-
-ROM growth beyond the observed 128-bank localized releases must go through an
-RTC-preserving mapper abstraction; it must not pretend native MBC3 has extra
-banks.
-
-## Validation
-
-```sh
-python tools/validate_expansion.py
-python -m unittest discover -s tests -v
-```
-
-No ROM binaries are stored in this repository.
+ROM 바이너리는 GitHub에 커밋하지 않습니다.
