@@ -1,71 +1,55 @@
 # Generation 10 expansion foundation
 
-SILVER must not inherit Generation II's one-byte identity assumptions as permanent engine ABI.
+SILVER's expansion rules are derived from the inspected Generation II ROM and save formats, not from a blank modern schema.
 
-This foundation is intentionally content-agnostic. It does **not** invent Generation 10 species, moves, items, abilities, types, forms, or mechanics. It reserves enough identity space and versioning so those datasets can be added later without another global format break.
+Read `ROM_SAVE_EXPANSION_BASELINE.md` first.
 
-## ABI decisions
+## What the original format forces us to change
+
+The retail Pokémon structures store species, held item and each move as one-byte values. That makes widening those identities a real serialization/runtime migration boundary.
+
+The inspected cartridges all use MBC3 + timer + RAM + battery and 32 KiB SRAM. Localized Silver already reaches 2 MiB / 128 ROM banks, so a larger content build cannot obtain more native MBC3 ROM banks by changing a constant.
+
+The legacy save layout also varies by release family: Japanese is 9×30 boxes while Korean/Western is 14×20, with different backup placement and string footprints.
+
+## Extended ABI
 
 | Domain | Width | Rule |
 | --- | ---: | --- |
-| Species ID | 16-bit | Species and form are never packed together |
-| Form ID | 16-bit | Independent from species |
-| Move ID | 16-bit | No 8-bit table index ABI |
-| Item ID | 16-bit | No 8-bit table index ABI |
-| Ability ID | 16-bit | Native field, not an afterthought |
-| Type ID | 8-bit | 0 and 0xFF reserved |
-| Generation ID | 8-bit | Data provenance / ruleset selection |
-| String ID | 32-bit | Text assets may outgrow bank-local indexes |
-| Feature flags | 32-bit | Mechanics are gated explicitly |
+| Species ID | 16-bit | Species and form remain separate |
+| Form ID | 16-bit | Independent identity field |
+| Move ID | 16-bit | Converted from legacy byte values |
+| Item ID | 16-bit | Converted from legacy byte values |
+| Ability ID | 16-bit | New native engine field |
+| Type ID | 8-bit | Can be revised later without touching mon identity |
+| Generation ID | 8-bit | Ruleset/provenance selector |
+| String ID | 32-bit | Decoupled from ROM-local text offsets |
+| Feature flags | 32-bit | Explicit mechanics gates |
 | Far pointer | 16-bit logical bank + 16-bit offset | Physical mapper translation is separate |
 
-ID 0 is reserved for NONE. The all-ones value for each width is reserved as INVALID, so valid data must never consume the sentinel.
+## Compatibility boundary
 
-## Why logical banks come first
+Legacy save import is read-only and profile-driven:
 
-Original Silver is tied to Game Boy cartridge banking and RTC behavior. A future large-content build may need a different physical mapper or a virtualized data backend, but choosing that now would couple every table to a hardware decision.
+- `jp`
+- `ko`
+- `western`
 
-All new cross-bank data references therefore use a logical 4-byte far pointer:
+The imported record is normalized into an internal model and only then written to the new expanded save format.
 
-```text
-u16 logical_bank
-u16 offset
-```
+Bytes after the first 32 KiB of the supplied save files are treated as host-side metadata, not cartridge SRAM.
 
-The mapper layer will translate logical banks to the physical backend. This preserves the option to keep an RTC-capable legacy path while also allowing a larger expanded build.
+## ROM banking boundary
 
-## Save contract
+The engine may use logical bank IDs wider than MBC3, but a backend must translate those IDs to a physical or virtual storage mechanism while keeping RTC behavior intact.
 
-The expanded save format must begin with a versioned header and feature flags. Species and form are stored separately. Migration from an original Generation II save is an explicit conversion step rather than silent reinterpretation of bytes.
+The final expanded mapper/backend is deliberately still undecided. Choosing it requires implementation/testing against the original RTC/save behavior, not just capacity estimates.
 
-A future save implementation must provide:
+## Next code work
 
-- `u16 format_version`
-- `u32 feature_flags`
-- independent `u16 species_id`
-- independent `u16 form_id`
-- explicit migration code for legacy records
-- checksummed/versioned sections so new fields can be added without shifting every old record
-
-## Content tables
-
-Do not key extended tables by raw ROM address. Key them by stable IDs and resolve them through table descriptors/far pointers.
-
-The first engine import must replace one-byte assumptions at boundaries before bulk content is added:
-
-1. species/form lookup
-2. moves
-3. items
-4. abilities
-5. type/ruleset data
-6. text/string lookup
-7. sprite/graphics lookup
-8. save serialization
-9. link/battle serialization
-10. scripting/event parameters
-
-## Compatibility rule
-
-Legacy behavior can have adapters, but new code must not expose an 8-bit species/move/item identity as a public engine interface.
-
-The target is Generation 10 readiness, not Generation 10 guesswork.
+1. import the Silver source baseline into this repository;
+2. implement ROM identity and legacy-save profile detection;
+3. implement JP/KO/Western SRAM decoders;
+4. define the profile-independent expanded Pokémon/save structures;
+5. replace one-byte identity assumptions at runtime boundaries;
+6. implement and test the RTC-preserving expanded banking backend.
