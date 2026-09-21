@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "target_generation": 10,
+  "forward_compatible": true,
+  "abi_version": 1,
+  "id_widths": {
+    "species": 16,
+    "form": 16,
+    "move": 16,
+    "item": 16,
+    "ability": 16,
+    "type": 8,
+    "generation": 8,
+    "string": 32
+  },
+  "reserved_ids": {
+    "zero_is_none": true,
+    "all_ones_is_invalid": true
+  },
+  "flags": {
+    "feature_bits": 32,
+    "species_bits": 32,
+    "form_bits": 32,
+    "move_bits": 32,
+    "item_bits": 32
+  },
+  "far_pointer": {
+    "logical_bank_bits": 16,
+    "offset_bits": 16,
+    "serialized_bytes": 4
+  },
+  "save": {
+    "format_version_bits": 16,
+    "feature_flags_bits": 32,
+    "species_and_form_are_separate": true,
+    "migration_required": true
+  },
+  "rom": {
+    "legacy_mapper": "MBC3",
+    "legacy_rom_limit_bytes": 2097152,
+    "expanded_mapper": "undecided",
+    "require_rtc_preservation": true,
+    "require_mapper_abstraction": true
+  }
+}
