@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "profiles": {
+    "jp": {
+      "rom_titles": ["POKEMON_SLVAAXJ"],
+      "revisions": [0, 1],
+      "rom_bytes": 1048576,
+      "raw_sram_bytes": 32768,
+      "boxes": 9,
+      "mons_per_box": 30,
+      "pc_capacity": 270,
+      "hall_of_fame_teams": 50,
+      "save_layout": "Japanese retail layout",
+      "source_layout": {
+        "save_bank": 1,
+        "active_box_bank": 1,
+        "active_box_address": "0xAD10",
+        "boxes_1_6_bank": 2,
+        "boxes_7_9_bank": 3,
+        "backup_save_bank": 3,
+        "backup_save_address": "0xB200"
+      }
+    },
+    "ko": {
+      "rom_titles": ["POKEMON_SLVAAXK"],
+      "revisions": [0],
+      "rom_bytes": 2097152,
+      "raw_sram_bytes": 32768,
+      "boxes": 14,
+      "mons_per_box": 20,
+      "pc_capacity": 280,
+      "hall_of_fame_teams": 30,
+      "save_layout": "Korean localized layout",
+      "source_layout": {
+        "boxes_1_7_bank": 2,
+        "boxes_8_14_bank": 3,
+        "backup_save": "split across SRAM banks 0, 1 and 3",
+        "hangul_mail_storage": "uses two-byte-per-character mail line storage"
+      }
+    },
+    "western": {
+      "rom_titles": ["POKEMON_SLVAAXE","POKEMON_SLVAAXD","POKEMON_SLVAAXF","POKEMON_SLVAAXI","POKEMON_SLVAAXS"],
+      "revisions": [0],
+      "rom_bytes": 2097152,
+      "raw_sram_bytes": 32768,
+      "boxes": 14,
+      "mons_per_box": 20,
+      "pc_capacity": 280,
+      "hall_of_fame_teams": 30,
+      "save_layout": "Western localized layout",
+      "source_layout": {
+        "boxes_1_7_bank": 2,
+        "boxes_8_14_bank": 3,
+        "backup_save": "split across SRAM banks 0, 1 and 3"
+      }
+    }
+  },
+  "migration_rules": {
+    "detect_profile_from_rom_identity": true,
+    "never_reinterpret_legacy_sram_in_place": true,
+    "preserve_raw_legacy_import": true,
+    "treat_bytes_after_first_32768_as_host_metadata": true,
+    "new_save_format_is_profile_independent": true
+  }
+}
