@@ -1,5 +1,5 @@
 {
-  "schema": 1,
+  "schema": 2,
   "project": "SILVER",
   "title": "ポケットモンスター 銀",
   "originalGeneration": 2,
@@ -57,5 +57,17 @@
     }
   },
   "nativeSaveProfile": "JPN-SILVER-GBA",
-  "nativeSaveIsolation": true
+  "nativeSaveIsolation": true,
+  "generationSuperset": {
+    "repository": "SakuraiTsubaki/EMERALD",
+    "manifest": "manifests/generation-supersets.json",
+    "documentation": "docs/GENERATION_SUPERSET_MERGE.md",
+    "generationKey": "gen2",
+    "sourceProfile": "SILVER",
+    "mergePolicy": "union-preserve-variants",
+    "runtimeModes": [
+      "generation-superset",
+      "source-version-reproduction"
+    ]
+  }
 }
