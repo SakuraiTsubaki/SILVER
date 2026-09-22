@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "name": "ExpandedMonV1",
   "record_bytes": 64,
   "legacy_box_record_bytes": 32,
@@ -13,22 +13,70 @@
     "legacy_tail_bytes": 26
   },
   "fields": [
-    {"name":"species_id","offset":0,"bytes":2},
-    {"name":"form_id","offset":2,"bytes":2},
-    {"name":"item_id","offset":4,"bytes":2},
-    {"name":"ability_id","offset":6,"bytes":2},
-    {"name":"move_ids","offset":8,"bytes":8,"count":4,"element_bytes":2},
-    {"name":"legacy_tail","offset":16,"bytes":26},
-    {"name":"source_profile","offset":42,"bytes":1},
-    {"name":"source_revision","offset":43,"bytes":1},
-    {"name":"feature_flags","offset":44,"bytes":4},
-    {"name":"reserved","offset":48,"bytes":16}
+    {
+      "name": "species_id",
+      "offset": 0,
+      "bytes": 2
+    },
+    {
+      "name": "form_id",
+      "offset": 2,
+      "bytes": 2
+    },
+    {
+      "name": "item_id",
+      "offset": 4,
+      "bytes": 2
+    },
+    {
+      "name": "ability_id",
+      "offset": 6,
+      "bytes": 2
+    },
+    {
+      "name": "move_ids",
+      "offset": 8,
+      "bytes": 8,
+      "count": 4,
+      "element_bytes": 2
+    },
+    {
+      "name": "legacy_tail",
+      "offset": 16,
+      "bytes": 26
+    },
+    {
+      "name": "source_profile",
+      "offset": 42,
+      "bytes": 1
+    },
+    {
+      "name": "source_revision",
+      "offset": 43,
+      "bytes": 1
+    },
+    {
+      "name": "feature_flags",
+      "offset": 44,
+      "bytes": 4
+    },
+    {
+      "name": "reserved",
+      "offset": 48,
+      "bytes": 16
+    }
   ],
   "profile_codes": {
-    "jp": 1,
-    "ko": 2,
-    "western": 3
+    "jp-rev0": 1,
+    "jp-rev1": 2,
+    "ko-rev0": 3,
+    "en-rev0": 4,
+    "de-rev0": 5,
+    "fr-rev0": 6,
+    "it-rev0": 7,
+    "es-rev0": 8
   },
+  "profile_policy": "source_profile preserves one of the eight exact retail Silver release identities; layout families are not serialized as provenance",
   "feature_flags": {
     "legacy_tail_valid": 0,
     "migrated_from_gen2": 1

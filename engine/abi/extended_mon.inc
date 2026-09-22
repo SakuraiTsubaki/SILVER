@@ -1,10 +1,6 @@
 ; SILVER ExpandedMonV1 ABI
-; This is a serialization/runtime boundary for widening Gen II identity fields.
-; Legacy Silver box records are 32 bytes. ExpandedMonV1 is 64 bytes.
-;
-; New multi-byte IDs are little-endian. The original bytes 6..31 are retained
-; verbatim as the legacy tail so migration can be audited and losslessly
-; downgraded while the widened fields remain representable.
+; Release provenance is exact: all eight audited retail Silver inputs have
+; independent profile codes even when their save layout family is shared.
 
 DEF LEGACY_BOXMON_BYTES EQU 32
 DEF LEGACY_BOXMON_SPECIES EQU 0
@@ -32,17 +28,21 @@ DEF XMON_RESERVED EQU 48
 DEF XMON_RESERVED_BYTES EQU 16
 DEF XMON_RECORD_BYTES EQU 64
 
-DEF XMON_PROFILE_JP EQU 1
-DEF XMON_PROFILE_KO EQU 2
-DEF XMON_PROFILE_WESTERN EQU 3
+DEF XMON_PROFILE_JP_REV0 EQU 1
+DEF XMON_PROFILE_JP_REV1 EQU 2
+DEF XMON_PROFILE_KO_REV0 EQU 3
+DEF XMON_PROFILE_EN_REV0 EQU 4
+DEF XMON_PROFILE_DE_REV0 EQU 5
+DEF XMON_PROFILE_FR_REV0 EQU 6
+DEF XMON_PROFILE_IT_REV0 EQU 7
+DEF XMON_PROFILE_ES_REV0 EQU 8
+DEF XMON_PROFILE_COUNT EQU 8
 
 DEF XMON_FLAG_LEGACY_TAIL_VALID_F EQU 0
 DEF XMON_FLAG_MIGRATED_FROM_GEN2_F EQU 1
 DEF XMON_FLAG_LEGACY_TAIL_VALID EQU 1 << XMON_FLAG_LEGACY_TAIL_VALID_F
 DEF XMON_FLAG_MIGRATED_FROM_GEN2 EQU 1 << XMON_FLAG_MIGRATED_FROM_GEN2_F
 
-; Legacy Silver has no serialized modern form ID or ability ID.
-; Converters must initialize both to NONE and must never infer them.
 DEF XMON_LEGACY_DEFAULT_FORM EQU ID16_NONE
 DEF XMON_LEGACY_DEFAULT_ABILITY EQU ID16_NONE
 

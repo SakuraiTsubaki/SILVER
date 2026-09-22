@@ -2,18 +2,22 @@
 
 ## Canonical direction
 
-ポケットモンスター 銀를 **Game Boy Advance / Generation III 계열 기반의 현대화 리메이크**로 재구축한다.
+포켓몬스터 은 / Pokémon Silver의 **확인된 모든 retail release를 독립적으로 조사**하고, 그 차이를 보존하면서 Game Boy Advance / Generation III 계열 기반의 현대화 리메이크로 재구축한다.
 
-이 문서는 현재 프로젝트 방향의 정본이다. 저장소에 남아 있는 과거 GB/GBC 확장·mapper·legacy-save 설계는 원본 분석 자료로 보존하되, 최종 실행 엔진 기준으로 사용하지 않는다.
+일본판은 Master Reference이지만 유일한 입력이 아니다. 한국어/영어/독일어/프랑스어/이탈리아어/스페인어 릴리스도 각각 독립적인 ROM/SAV 입력과 provenance를 가진다.
 
-## Original baseline
+## Audited original inputs
 
-- `Pocket Monsters Gin (Japan).gbc`
-- `Pocket Monsters Gin (Japan) (Rev A).gbc`
+1. Japanese Rev.0 — `Pocket Monsters Gin (Japan).gbc/.sav`
+2. Japanese Rev.A — `Pocket Monsters Gin (Japan) (Rev A).gbc/.sav`
+3. Korean Rev.0 — `Pocket Monsters Eun (Korea).gbc/.sav`
+4. English Rev.0 — `Pokemon - Silver Version (USA, Europe).gbc/.sav`
+5. German Rev.0 — `Pokemon - Silberne Edition (Germany).gbc/.sav`
+6. French Rev.0 — `Pokemon - Version Argent (France).gbc/.sav`
+7. Italian Rev.0 — `Pokemon - Versione Argento (Italy).gbc/.sav`
+8. Spanish Rev.0 — `Pokemon - Edicion Plata (Spain).gbc/.sav`
 
-원본 조사 저장소: `SakuraiTsubaki/PocketMonsters-Gin-Disassembly`
-
-모든 일본판 revision은 독립 입력으로 조사하고 차이를 보존한다.
+공통 save layout을 재사용할 수는 있어도 release identity를 `western` 같은 하나의 profile로 합치지 않는다.
 
 ## Runtime baseline
 
@@ -22,6 +26,4 @@
 - Modern core reference: `rh-hideout/pokeemerald-expansion@75b806a3ab57a81ff1eb6179288981f0b3cc3050`
 - Coordination/reference workspace: `SakuraiTsubaki/EMERALD`
 
-## Remake rule
-
-원작의 지역·스토리·이벤트·NPC·버전 고유성은 보존한다. 포켓몬 시스템은 현재 검증 가능한 최신 공식 기준으로 현대화한다. 미출시/미검증 세대 데이터는 추측하지 않는다.
+GB/GBC mapper/SRAM/address는 원본 분석·import 근거다. 최종 런타임 엔진은 GBA이며, 10세대 대비 확장 ABI는 모든 8개 원본 release를 구분한 채 GBA-native 데이터/세이브 모델로 변환한다.

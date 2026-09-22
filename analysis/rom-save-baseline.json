@@ -1,36 +1,347 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "generated_from_user_supplied_inputs": true,
-  "roms": [
-    {"id":"silver-jp-rev0","file":"Pocket Monsters Gin (Japan).gbc","size":1048576,"sha1":"fa8c51059c1642faa570db56ef089f54d1d2011f","sha256":"0a532063a3ff5750a464582aa7bbee2b6d42e1a92a136d9f4590e373487b615c","title":"POKEMON_SLVAAXJ","cgb_flag":128,"sgb_flag":3,"cartridge_type":16,"rom_size_code":5,"ram_size_code":3,"destination_code":0,"version":0},
-    {"id":"silver-jp-rev1","file":"Pocket Monsters Gin (Japan) (Rev A).gbc","size":1048576,"sha1":"a11d5ddc26eb826086593f82370b15d16404d33e","sha256":"99e5267fbf5a7748d4f3b75ba1990cb5d91348339468607a04bfbc6081c62d71","title":"POKEMON_SLVAAXJ","cgb_flag":128,"sgb_flag":3,"cartridge_type":16,"rom_size_code":5,"ram_size_code":3,"destination_code":0,"version":1},
-    {"id":"silver-ko-rev0","file":"Pocket Monsters Eun (Korea).gbc","size":2097152,"sha1":"cb22d7e03a74dc3a563fde6be8626626b2b392e7","sha256":"ebbac63c0c4309c82dbb6723e7163369784f962b4fd3e2f486075307c3008a22","title":"POKEMON_SLVAAXK","cgb_flag":192,"sgb_flag":0,"cartridge_type":16,"rom_size_code":6,"ram_size_code":3,"destination_code":1,"version":0},
-    {"id":"silver-en-rev0","file":"Pokemon - Silver Version (USA, Europe).gbc","size":2097152,"sha1":"49b163f7e57702bc939d642a18f591de55d92dae","sha256":"72b190859a59623cbef6c49d601f8de52c1d2331b4f08a8d2acc17274fc19a8c","title":"POKEMON_SLVAAXE","cgb_flag":128,"sgb_flag":3,"cartridge_type":16,"rom_size_code":6,"ram_size_code":3,"destination_code":1,"version":0},
-    {"id":"silver-de-rev0","file":"Pokemon - Silberne Edition (Germany).gbc","size":2097152,"sha1":"8ecc58d621faaedf2a934bd2583d527220df7bb9","sha256":"c3d1fd0dec1d5fa9aa7f85275e79c52aa9175d191c63cbed7b406c306d946348","title":"POKEMON_SLVAAXD","cgb_flag":128,"sgb_flag":3,"cartridge_type":16,"rom_size_code":6,"ram_size_code":3,"destination_code":1,"version":0},
-    {"id":"silver-fr-rev0","file":"Pokemon - Version Argent (France).gbc","size":2097152,"sha1":"a4a7e8079b7a53e4d9ef43382bbb1090b9d45d1a","sha256":"e120c4ddb0dc3e25b95c9c71b3ffd59ff57ce689cf4d79d04913ba59140c18c2","title":"POKEMON_SLVAAXF","cgb_flag":128,"sgb_flag":3,"cartridge_type":16,"rom_size_code":6,"ram_size_code":3,"destination_code":1,"version":0},
-    {"id":"silver-it-rev0","file":"Pokemon - Versione Argento (Italy).gbc","size":2097152,"sha1":"c9eca9d0a837beb9137bb7d779e469c54e9f8d77","sha256":"04c442246d1ae0ed6bf5e072bb7e3d06376e584b953d6b14047b39e45fbb0cb4","title":"POKEMON_SLVAAXI","cgb_flag":128,"sgb_flag":3,"cartridge_type":16,"rom_size_code":6,"ram_size_code":3,"destination_code":1,"version":0},
-    {"id":"silver-es-rev0","file":"Pokemon - Edicion Plata (Spain).gbc","size":2097152,"sha1":"05bd978ab2cb104b0aff3f696896e30885203a18","sha256":"6797010c052e8f9373ea2b9e855ec078b34fda12e5ccf742eb19bb5e8f6947c2","title":"POKEMON_SLVAAXS","cgb_flag":128,"sgb_flag":3,"cartridge_type":16,"rom_size_code":6,"ram_size_code":3,"destination_code":1,"version":0}
+  "release_count": 8,
+  "releases": [
+    {
+      "release_id": "silver-jp-rev0",
+      "profile_id": "jp-rev0",
+      "profile_code": 1,
+      "layout_family": "jp",
+      "language": "Japanese",
+      "region": "Japan",
+      "revision": 0,
+      "rom": {
+        "file": "Pocket Monsters Gin (Japan).gbc",
+        "bytes": 1048576,
+        "sha256": "0a532063a3ff5750a464582aa7bbee2b6d42e1a92a136d9f4590e373487b615c",
+        "title": "POKEMON_SLVAAXJ",
+        "cgb_flag": 128,
+        "sgb_flag": 3,
+        "cartridge_type": 16,
+        "rom_size_code": 5,
+        "ram_size_code": 3,
+        "destination_code": 0,
+        "version": 0,
+        "header_checksum": 39,
+        "header_checksum_valid": true,
+        "global_checksum": 30353,
+        "global_checksum_valid": true
+      },
+      "save": {
+        "file": "Pocket Monsters Gin (Japan).sav",
+        "bytes": 32812,
+        "sha256": "529b6dbfdfdb7a67679c0c8fb68c3930786112d8591f666e6c1a9f4fd4d6492c",
+        "raw_sram_bytes": 32768,
+        "raw_sram_sha256": "ab65dbd5d39949dff5315aefe88bbaa70dd2a1b760d3322e79f2f0865732b0e8",
+        "host_tail_bytes": 44,
+        "host_tail_sha256": "d07da8dfd8334c9b5f4d1f2a173df77ef0ccd89798764b07fc11dcf3820ecd82",
+        "sram_bank_sha256": [
+          "cc593f580cfe12eb747a766ba9c04f46661f818505d1f4f8fcd96633f293a102",
+          "6d1f2f8d50c3f15273778af0482d0c93f492270dfc62a18bb4e89943d52ef67b",
+          "dc9339ddbcaf7216d1da4535f03371a034532703330a877063bd35204ee77eb3",
+          "dbecc36a857b9c0d7e2db4e28052dade334f4af1ae5a988fa8ab1031543877dc"
+        ]
+      }
+    },
+    {
+      "release_id": "silver-jp-rev1",
+      "profile_id": "jp-rev1",
+      "profile_code": 2,
+      "layout_family": "jp",
+      "language": "Japanese",
+      "region": "Japan",
+      "revision": 1,
+      "rom": {
+        "file": "Pocket Monsters Gin (Japan) (Rev A).gbc",
+        "bytes": 1048576,
+        "sha256": "99e5267fbf5a7748d4f3b75ba1990cb5d91348339468607a04bfbc6081c62d71",
+        "title": "POKEMON_SLVAAXJ",
+        "cgb_flag": 128,
+        "sgb_flag": 3,
+        "cartridge_type": 16,
+        "rom_size_code": 5,
+        "ram_size_code": 3,
+        "destination_code": 0,
+        "version": 1,
+        "header_checksum": 38,
+        "header_checksum_valid": true,
+        "global_checksum": 7476,
+        "global_checksum_valid": true
+      },
+      "save": {
+        "file": "Pocket Monsters Gin (Japan) (Rev A).sav",
+        "bytes": 32812,
+        "sha256": "b0af4d8d8d424695864238c3194f01bff35b2946f8272d8e9bb2ab9edd39ec5e",
+        "raw_sram_bytes": 32768,
+        "raw_sram_sha256": "e2ddee41e1a78252223743cb18e3a940f0eee9e0647a1466bd88872bfa2cf923",
+        "host_tail_bytes": 44,
+        "host_tail_sha256": "32aa286ab22dc76047805e3774abbcbb3db0feee18344036a50f00c9bab2fe19",
+        "sram_bank_sha256": [
+          "4b7db9aab48bb731ad2f2ae12261f02251240d5ecc9f4fc8934526ed278095e5",
+          "d8a0e70e0c888ae5f11e9586390da5e77fafae47822756143bf678df386f0635",
+          "dc9339ddbcaf7216d1da4535f03371a034532703330a877063bd35204ee77eb3",
+          "8373fd5ad3d34d3d900271a4837245a9bd9aac56cc0638276f637b2fc58496c8"
+        ]
+      }
+    },
+    {
+      "release_id": "silver-ko-rev0",
+      "profile_id": "ko-rev0",
+      "profile_code": 3,
+      "layout_family": "ko",
+      "language": "Korean",
+      "region": "Korea",
+      "revision": 0,
+      "rom": {
+        "file": "Pocket Monsters Eun (Korea).gbc",
+        "bytes": 2097152,
+        "sha256": "ebbac63c0c4309c82dbb6723e7163369784f962b4fd3e2f486075307c3008a22",
+        "title": "POKEMON_SLVAAXK",
+        "cgb_flag": 192,
+        "sgb_flag": 0,
+        "cartridge_type": 16,
+        "rom_size_code": 6,
+        "ram_size_code": 3,
+        "destination_code": 1,
+        "version": 0,
+        "header_checksum": 231,
+        "header_checksum_valid": true,
+        "global_checksum": 39003,
+        "global_checksum_valid": true
+      },
+      "save": {
+        "file": "Pocket Monsters Eun (Korea).sav",
+        "bytes": 32812,
+        "sha256": "54bdd67be8adf27a1b62e6b2b8168635ef73b37f22c3c83dbc17c34969dfce98",
+        "raw_sram_bytes": 32768,
+        "raw_sram_sha256": "4428380406b976ad934b22940f0b94eaea4b5fcebb542779be12ab7c7962d5b2",
+        "host_tail_bytes": 44,
+        "host_tail_sha256": "92fe29426f8cf3e253f8fcedd2fb8537a61854838fa192bcf2d45fa4c85192d3",
+        "sram_bank_sha256": [
+          "c52ce4f317c7023106a4d21ae5a63a23c0f7b8b4c348a132b2e79db8a460f092",
+          "3628919ce0df2f144c2c6c0b005ae571b7d4a5d12b04ce5cbbdab3d760efa471",
+          "1e1de2e440dd12702456da0d09469c7de32b9eb52ec0e8c350539feafeac0b6e",
+          "8a90a00ec418c2d0daa3da4354b229905f8f3b5efa4dad6b7b518d20bf1a37f4"
+        ]
+      }
+    },
+    {
+      "release_id": "silver-en-rev0",
+      "profile_id": "en-rev0",
+      "profile_code": 4,
+      "layout_family": "western",
+      "language": "English",
+      "region": "USA/Europe",
+      "revision": 0,
+      "rom": {
+        "file": "Pokemon - Silver Version (USA, Europe).gbc",
+        "bytes": 2097152,
+        "sha256": "72b190859a59623cbef6c49d601f8de52c1d2331b4f08a8d2acc17274fc19a8c",
+        "title": "POKEMON_SLVAAXE",
+        "cgb_flag": 128,
+        "sgb_flag": 3,
+        "cartridge_type": 16,
+        "rom_size_code": 6,
+        "ram_size_code": 3,
+        "destination_code": 1,
+        "version": 0,
+        "header_checksum": 42,
+        "header_checksum_valid": true,
+        "global_checksum": 3502,
+        "global_checksum_valid": true
+      },
+      "save": {
+        "file": "Pokemon - Silver Version (USA, Europe).sav",
+        "bytes": 32812,
+        "sha256": "476568f1bc1ab878ba9d0d718a32bb4453ecf15a1b5da517aa9d035c410c0b32",
+        "raw_sram_bytes": 32768,
+        "raw_sram_sha256": "ac491e5f818e645a5851c9d79f0795782a9651edbf86ca13fb7180efadf41366",
+        "host_tail_bytes": 44,
+        "host_tail_sha256": "b61552403318776a6e39d07cf1af9b2ca1ffa9873799d33188612f41f52e2a58",
+        "sram_bank_sha256": [
+          "d9c118b4314d705097cb43ac4a99969d90d51b9bd182b259cda65b2f6a0fdf2e",
+          "a33751af69ad42e39d9a5ab9ac2470ecff6b46341ba72a86c471b51cea4e471b",
+          "1e1de2e440dd12702456da0d09469c7de32b9eb52ec0e8c350539feafeac0b6e",
+          "eb65d8691e259d8a7f96843de16a6e67843a29f058b20b701448ec9397c68243"
+        ]
+      }
+    },
+    {
+      "release_id": "silver-de-rev0",
+      "profile_id": "de-rev0",
+      "profile_code": 5,
+      "layout_family": "western",
+      "language": "German",
+      "region": "Germany",
+      "revision": 0,
+      "rom": {
+        "file": "Pokemon - Silberne Edition (Germany).gbc",
+        "bytes": 2097152,
+        "sha256": "c3d1fd0dec1d5fa9aa7f85275e79c52aa9175d191c63cbed7b406c306d946348",
+        "title": "POKEMON_SLVAAXD",
+        "cgb_flag": 128,
+        "sgb_flag": 3,
+        "cartridge_type": 16,
+        "rom_size_code": 6,
+        "ram_size_code": 3,
+        "destination_code": 1,
+        "version": 0,
+        "header_checksum": 43,
+        "header_checksum_valid": true,
+        "global_checksum": 52590,
+        "global_checksum_valid": true
+      },
+      "save": {
+        "file": "Pokemon - Silberne Edition (Germany).sav",
+        "bytes": 32812,
+        "sha256": "4c4da644fe8a8883691527b048eee2310ecfd15cba6ec269c259870964600b08",
+        "raw_sram_bytes": 32768,
+        "raw_sram_sha256": "2880c17d1b30eed9e492b84ae63d0d60256ecf53236be483dca0816ca9b4c599",
+        "host_tail_bytes": 44,
+        "host_tail_sha256": "998f1422c0c742e025282ef28d46233c676f4afd37d3bc14057618cdda6a0b9d",
+        "sram_bank_sha256": [
+          "c959accfcd0b6dca7288c9b3b5cf3d8e2be48c0b884a35f55006350262f4d56a",
+          "c97a933b5918df9f1ab11ea09128b70ad71ef2142f72f3ca6a7d2132b9bba757",
+          "eee6dde0e9102f774be6d87c10da2fc6bde605a33c33ccc741941c8b8396bd5b",
+          "2669f3e126371068aecbfa68c043ae9024f6da9fb5dced1800320c010eae67b6"
+        ]
+      }
+    },
+    {
+      "release_id": "silver-fr-rev0",
+      "profile_id": "fr-rev0",
+      "profile_code": 6,
+      "layout_family": "western",
+      "language": "French",
+      "region": "France",
+      "revision": 0,
+      "rom": {
+        "file": "Pokemon - Version Argent (France).gbc",
+        "bytes": 2097152,
+        "sha256": "e120c4ddb0dc3e25b95c9c71b3ffd59ff57ce689cf4d79d04913ba59140c18c2",
+        "title": "POKEMON_SLVAAXF",
+        "cgb_flag": 128,
+        "sgb_flag": 3,
+        "cartridge_type": 16,
+        "rom_size_code": 6,
+        "ram_size_code": 3,
+        "destination_code": 1,
+        "version": 0,
+        "header_checksum": 41,
+        "header_checksum_valid": true,
+        "global_checksum": 64396,
+        "global_checksum_valid": true
+      },
+      "save": {
+        "file": "Pokemon - Version Argent (France).sav",
+        "bytes": 32812,
+        "sha256": "f96e8abe35a63beb072bd24d5221c6a5996cc7a32ec4250fd0e38fd2d57eb81c",
+        "raw_sram_bytes": 32768,
+        "raw_sram_sha256": "9b01f4d426eac928b946b4eb7c903b5dd9938ddcf927253b56e34d18f6f6904e",
+        "host_tail_bytes": 44,
+        "host_tail_sha256": "7f264b3d9815f495f94d6c232f2639447c5ec1f2cc85e19bf5be7e00e5a2f21d",
+        "sram_bank_sha256": [
+          "db8270e40f0a8d716a7762611da77d5316f905e0f834811545ee2c764fa39a74",
+          "94dc5f5cf4fc8ee7934cc4fce611dba7beb030ea3e7a086ac3dcd03991a34d9c",
+          "eee6dde0e9102f774be6d87c10da2fc6bde605a33c33ccc741941c8b8396bd5b",
+          "85e87c2565455ec619f039e4c2f5db8b9043fd8c38a8e68ef2b1b27ede3a1c78"
+        ]
+      }
+    },
+    {
+      "release_id": "silver-it-rev0",
+      "profile_id": "it-rev0",
+      "profile_code": 7,
+      "layout_family": "western",
+      "language": "Italian",
+      "region": "Italy",
+      "revision": 0,
+      "rom": {
+        "file": "Pokemon - Versione Argento (Italy).gbc",
+        "bytes": 2097152,
+        "sha256": "04c442246d1ae0ed6bf5e072bb7e3d06376e584b953d6b14047b39e45fbb0cb4",
+        "title": "POKEMON_SLVAAXI",
+        "cgb_flag": 128,
+        "sgb_flag": 3,
+        "cartridge_type": 16,
+        "rom_size_code": 6,
+        "ram_size_code": 3,
+        "destination_code": 1,
+        "version": 0,
+        "header_checksum": 38,
+        "header_checksum_valid": true,
+        "global_checksum": 29520,
+        "global_checksum_valid": true
+      },
+      "save": {
+        "file": "Pokemon - Versione Argento (Italy).sav",
+        "bytes": 32812,
+        "sha256": "63193ddc458892402bddd3e332136792ee37181b67ce7a56d51e1b538176a17c",
+        "raw_sram_bytes": 32768,
+        "raw_sram_sha256": "08dfd4af41681e61642212d00bae204ccaaaedefb34fab70b65c7dab03997ff4",
+        "host_tail_bytes": 44,
+        "host_tail_sha256": "7664388246cca9a4ffa22c2924e5a204721e8e1b12c16835e5d65b83df02dad1",
+        "sram_bank_sha256": [
+          "74749587bc26b591ad2fb81cc0fa8ea46260e3390ab61e08f3c85abb654f0376",
+          "e4d86e3c2cdb2e49b49e30aae6a4e4af7583bf783056ccbea49e3ff4c5f77755",
+          "eee6dde0e9102f774be6d87c10da2fc6bde605a33c33ccc741941c8b8396bd5b",
+          "70e2596c5f3c23a8d34d08846fd7a0776745777ec0ec2da5222dfb48c2685cd6"
+        ]
+      }
+    },
+    {
+      "release_id": "silver-es-rev0",
+      "profile_id": "es-rev0",
+      "profile_code": 8,
+      "layout_family": "western",
+      "language": "Spanish",
+      "region": "Spain",
+      "revision": 0,
+      "rom": {
+        "file": "Pokemon - Edicion Plata (Spain).gbc",
+        "bytes": 2097152,
+        "sha256": "6797010c052e8f9373ea2b9e855ec078b34fda12e5ccf742eb19bb5e8f6947c2",
+        "title": "POKEMON_SLVAAXS",
+        "cgb_flag": 128,
+        "sgb_flag": 3,
+        "cartridge_type": 16,
+        "rom_size_code": 6,
+        "ram_size_code": 3,
+        "destination_code": 1,
+        "version": 0,
+        "header_checksum": 28,
+        "header_checksum_valid": true,
+        "global_checksum": 1611,
+        "global_checksum_valid": true
+      },
+      "save": {
+        "file": "Pokemon - Edicion Plata (Spain).sav",
+        "bytes": 32812,
+        "sha256": "45fc0d65967071ce63b4d60b0769379a761297a60728dadcad7fa6fbfd6c11e6",
+        "raw_sram_bytes": 32768,
+        "raw_sram_sha256": "1a76f3f47f19fed6a2fad3fc8cfcf1c6ba405e67ff07152a2409927ffc15854f",
+        "host_tail_bytes": 44,
+        "host_tail_sha256": "5b497c33db98d6124878d57237ed77ba055813f9a791e14454afe9aec0afed4b",
+        "sram_bank_sha256": [
+          "bbc798b4126609b7ded486221a5bfad52dd7d3aa4731423a9008366bb00c768a",
+          "e105a899c460a7aa83f5ccc2d282976a8552864981575b2f60d62e8ba609619b",
+          "eee6dde0e9102f774be6d87c10da2fc6bde605a33c33ccc741941c8b8396bd5b",
+          "2535fdb36c712ef69b48ac0e28a417d3fe9daed7e2af887322dbe00d6b4071fd"
+        ]
+      }
+    }
   ],
-  "saves": [
-    {"profile":"jp","revision":0,"file":"Pocket Monsters Gin (Japan).sav","size":32812,"raw_sram_bytes":32768,"host_tail_bytes":44,"sha256":"529b6dbfdfdb7a67679c0c8fb68c3930786112d8591f666e6c1a9f4fd4d6492c","core_sha256":"ab65dbd5d39949dff5315aefe88bbaa70dd2a1b760d3322e79f2f0865732b0e8"},
-    {"profile":"jp","revision":1,"file":"Pocket Monsters Gin (Japan) (Rev A).sav","size":32812,"raw_sram_bytes":32768,"host_tail_bytes":44,"sha256":"b0af4d8d8d424695864238c3194f01bff35b2946f8272d8e9bb2ab9edd39ec5e","core_sha256":"e2ddee41e1a78252223743cb18e3a940f0eee9e0647a1466bd88872bfa2cf923"},
-    {"profile":"ko","revision":0,"file":"Pocket Monsters Eun (Korea).sav","size":32812,"raw_sram_bytes":32768,"host_tail_bytes":44,"sha256":"54bdd67be8adf27a1b62e6b2b8168635ef73b37f22c3c83dbc17c34969dfce98","core_sha256":"4428380406b976ad934b22940f0b94eaea4b5fcebb542779be12ab7c7962d5b2"},
-    {"profile":"western","language":"English","file":"Pokemon - Silver Version (USA, Europe).sav","size":32812,"raw_sram_bytes":32768,"host_tail_bytes":44,"sha256":"476568f1bc1ab878ba9d0d718a32bb4453ecf15a1b5da517aa9d035c410c0b32","core_sha256":"ac491e5f818e645a5851c9d79f0795782a9651edbf86ca13fb7180efadf41366"},
-    {"profile":"western","language":"German","file":"Pokemon - Silberne Edition (Germany).sav","size":32812,"raw_sram_bytes":32768,"host_tail_bytes":44,"sha256":"4c4da644fe8a8883691527b048eee2310ecfd15cba6ec269c259870964600b08","core_sha256":"2880c17d1b30eed9e492b84ae63d0d60256ecf53236be483dca0816ca9b4c599"},
-    {"profile":"western","language":"French","file":"Pokemon - Version Argent (France).sav","size":32812,"raw_sram_bytes":32768,"host_tail_bytes":44,"sha256":"f96e8abe35a63beb072bd24d5221c6a5996cc7a32ec4250fd0e38fd2d57eb81c","core_sha256":"9b01f4d426eac928b946b4eb7c903b5dd9938ddcf927253b56e34d18f6f6904e"},
-    {"profile":"western","language":"Italian","file":"Pokemon - Versione Argento (Italy).sav","size":32812,"raw_sram_bytes":32768,"host_tail_bytes":44,"sha256":"63193ddc458892402bddd3e332136792ee37181b67ce7a56d51e1b538176a17c","core_sha256":"08dfd4af41681e61642212d00bae204ccaaaedefb34fab70b65c7dab03997ff4"},
-    {"profile":"western","language":"Spanish","file":"Pokemon - Edicion Plata (Spain).sav","size":32812,"raw_sram_bytes":32768,"host_tail_bytes":44,"sha256":"45fc0d65967071ce63b4d60b0769379a761297a60728dadcad7fa6fbfd6c11e6","core_sha256":"1a76f3f47f19fed6a2fad3fc8cfcf1c6ba405e67ff07152a2409927ffc15854f"}
-  ],
-  "observations": {
-    "cartridge_type_0x10_for_all_roms": true,
+  "global_observations": {
+    "all_rom_header_checksums_valid": true,
+    "all_rom_global_checksums_valid": true,
+    "all_cartridge_type_0x10": true,
     "cartridge_type_name": "MBC3+TIMER+RAM+BATTERY",
+    "all_ram_size_code_0x03": true,
     "raw_sram_bytes": 32768,
     "raw_sram_banks": 4,
     "sram_bank_bytes": 8192,
-    "japanese_rom_bytes": 1048576,
-    "localized_rom_bytes": 2097152,
-    "all_observed_save_files_have_44_host_bytes_after_sram": true,
-    "jp_rev0_vs_rev1_observed_core_diff_bytes": 52,
-    "jp_rev0_vs_rev1_note": "The supplied saves have the same 32 KiB physical SRAM size; 52 bytes differ in this observed state. Do not infer universal byte identity."
+    "all_save_files_have_44_host_bytes_after_sram": true,
+    "release_identity_rule": "All eight retail inputs remain independent identities. Shared layout_family values are implementation details only and must never collapse release provenance."
   }
 }

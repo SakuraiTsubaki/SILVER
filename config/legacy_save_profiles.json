@@ -1,16 +1,23 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "profile_count": 8,
   "profiles": {
-    "jp": {
-      "rom_titles": ["POKEMON_SLVAAXJ"],
-      "revisions": [0, 1],
+    "jp-rev0": {
+      "release_id": "silver-jp-rev0",
+      "profile_code": 1,
+      "language": "Japanese",
+      "region": "Japan",
+      "revision": 0,
+      "layout_family": "jp",
+      "rom_title": "POKEMON_SLVAAXJ",
       "rom_bytes": 1048576,
+      "rom_sha256": "0a532063a3ff5750a464582aa7bbee2b6d42e1a92a136d9f4590e373487b615c",
+      "supplied_save_sha256": "529b6dbfdfdb7a67679c0c8fb68c3930786112d8591f666e6c1a9f4fd4d6492c",
       "raw_sram_bytes": 32768,
       "boxes": 9,
       "mons_per_box": 30,
       "pc_capacity": 270,
       "hall_of_fame_teams": 50,
-      "save_layout": "Japanese retail layout",
       "source_layout": {
         "save_bank": 1,
         "active_box_bank": 1,
@@ -21,33 +28,159 @@
         "backup_save_address": "0xB200"
       }
     },
-    "ko": {
-      "rom_titles": ["POKEMON_SLVAAXK"],
-      "revisions": [0],
+    "jp-rev1": {
+      "release_id": "silver-jp-rev1",
+      "profile_code": 2,
+      "language": "Japanese",
+      "region": "Japan",
+      "revision": 1,
+      "layout_family": "jp",
+      "rom_title": "POKEMON_SLVAAXJ",
+      "rom_bytes": 1048576,
+      "rom_sha256": "99e5267fbf5a7748d4f3b75ba1990cb5d91348339468607a04bfbc6081c62d71",
+      "supplied_save_sha256": "b0af4d8d8d424695864238c3194f01bff35b2946f8272d8e9bb2ab9edd39ec5e",
+      "raw_sram_bytes": 32768,
+      "boxes": 9,
+      "mons_per_box": 30,
+      "pc_capacity": 270,
+      "hall_of_fame_teams": 50,
+      "source_layout": {
+        "save_bank": 1,
+        "active_box_bank": 1,
+        "active_box_address": "0xAD10",
+        "boxes_1_6_bank": 2,
+        "boxes_7_9_bank": 3,
+        "backup_save_bank": 3,
+        "backup_save_address": "0xB200"
+      }
+    },
+    "ko-rev0": {
+      "release_id": "silver-ko-rev0",
+      "profile_code": 3,
+      "language": "Korean",
+      "region": "Korea",
+      "revision": 0,
+      "layout_family": "ko",
+      "rom_title": "POKEMON_SLVAAXK",
       "rom_bytes": 2097152,
+      "rom_sha256": "ebbac63c0c4309c82dbb6723e7163369784f962b4fd3e2f486075307c3008a22",
+      "supplied_save_sha256": "54bdd67be8adf27a1b62e6b2b8168635ef73b37f22c3c83dbc17c34969dfce98",
       "raw_sram_bytes": 32768,
       "boxes": 14,
       "mons_per_box": 20,
       "pc_capacity": 280,
       "hall_of_fame_teams": 30,
-      "save_layout": "Korean localized layout",
       "source_layout": {
         "boxes_1_7_bank": 2,
         "boxes_8_14_bank": 3,
         "backup_save": "split across SRAM banks 0, 1 and 3",
-        "hangul_mail_storage": "uses two-byte-per-character mail line storage"
+        "hangul_mail_storage": "two-byte-per-character mail line storage"
       }
     },
-    "western": {
-      "rom_titles": ["POKEMON_SLVAAXE","POKEMON_SLVAAXD","POKEMON_SLVAAXF","POKEMON_SLVAAXI","POKEMON_SLVAAXS"],
-      "revisions": [0],
+    "en-rev0": {
+      "release_id": "silver-en-rev0",
+      "profile_code": 4,
+      "language": "English",
+      "region": "USA/Europe",
+      "revision": 0,
+      "layout_family": "western",
+      "rom_title": "POKEMON_SLVAAXE",
       "rom_bytes": 2097152,
+      "rom_sha256": "72b190859a59623cbef6c49d601f8de52c1d2331b4f08a8d2acc17274fc19a8c",
+      "supplied_save_sha256": "476568f1bc1ab878ba9d0d718a32bb4453ecf15a1b5da517aa9d035c410c0b32",
       "raw_sram_bytes": 32768,
       "boxes": 14,
       "mons_per_box": 20,
       "pc_capacity": 280,
       "hall_of_fame_teams": 30,
-      "save_layout": "Western localized layout",
+      "source_layout": {
+        "boxes_1_7_bank": 2,
+        "boxes_8_14_bank": 3,
+        "backup_save": "split across SRAM banks 0, 1 and 3"
+      }
+    },
+    "de-rev0": {
+      "release_id": "silver-de-rev0",
+      "profile_code": 5,
+      "language": "German",
+      "region": "Germany",
+      "revision": 0,
+      "layout_family": "western",
+      "rom_title": "POKEMON_SLVAAXD",
+      "rom_bytes": 2097152,
+      "rom_sha256": "c3d1fd0dec1d5fa9aa7f85275e79c52aa9175d191c63cbed7b406c306d946348",
+      "supplied_save_sha256": "4c4da644fe8a8883691527b048eee2310ecfd15cba6ec269c259870964600b08",
+      "raw_sram_bytes": 32768,
+      "boxes": 14,
+      "mons_per_box": 20,
+      "pc_capacity": 280,
+      "hall_of_fame_teams": 30,
+      "source_layout": {
+        "boxes_1_7_bank": 2,
+        "boxes_8_14_bank": 3,
+        "backup_save": "split across SRAM banks 0, 1 and 3"
+      }
+    },
+    "fr-rev0": {
+      "release_id": "silver-fr-rev0",
+      "profile_code": 6,
+      "language": "French",
+      "region": "France",
+      "revision": 0,
+      "layout_family": "western",
+      "rom_title": "POKEMON_SLVAAXF",
+      "rom_bytes": 2097152,
+      "rom_sha256": "e120c4ddb0dc3e25b95c9c71b3ffd59ff57ce689cf4d79d04913ba59140c18c2",
+      "supplied_save_sha256": "f96e8abe35a63beb072bd24d5221c6a5996cc7a32ec4250fd0e38fd2d57eb81c",
+      "raw_sram_bytes": 32768,
+      "boxes": 14,
+      "mons_per_box": 20,
+      "pc_capacity": 280,
+      "hall_of_fame_teams": 30,
+      "source_layout": {
+        "boxes_1_7_bank": 2,
+        "boxes_8_14_bank": 3,
+        "backup_save": "split across SRAM banks 0, 1 and 3"
+      }
+    },
+    "it-rev0": {
+      "release_id": "silver-it-rev0",
+      "profile_code": 7,
+      "language": "Italian",
+      "region": "Italy",
+      "revision": 0,
+      "layout_family": "western",
+      "rom_title": "POKEMON_SLVAAXI",
+      "rom_bytes": 2097152,
+      "rom_sha256": "04c442246d1ae0ed6bf5e072bb7e3d06376e584b953d6b14047b39e45fbb0cb4",
+      "supplied_save_sha256": "63193ddc458892402bddd3e332136792ee37181b67ce7a56d51e1b538176a17c",
+      "raw_sram_bytes": 32768,
+      "boxes": 14,
+      "mons_per_box": 20,
+      "pc_capacity": 280,
+      "hall_of_fame_teams": 30,
+      "source_layout": {
+        "boxes_1_7_bank": 2,
+        "boxes_8_14_bank": 3,
+        "backup_save": "split across SRAM banks 0, 1 and 3"
+      }
+    },
+    "es-rev0": {
+      "release_id": "silver-es-rev0",
+      "profile_code": 8,
+      "language": "Spanish",
+      "region": "Spain",
+      "revision": 0,
+      "layout_family": "western",
+      "rom_title": "POKEMON_SLVAAXS",
+      "rom_bytes": 2097152,
+      "rom_sha256": "6797010c052e8f9373ea2b9e855ec078b34fda12e5ccf742eb19bb5e8f6947c2",
+      "supplied_save_sha256": "45fc0d65967071ce63b4d60b0769379a761297a60728dadcad7fa6fbfd6c11e6",
+      "raw_sram_bytes": 32768,
+      "boxes": 14,
+      "mons_per_box": 20,
+      "pc_capacity": 280,
+      "hall_of_fame_teams": 30,
       "source_layout": {
         "boxes_1_7_bank": 2,
         "boxes_8_14_bank": 3,
@@ -56,10 +189,13 @@
     }
   },
   "migration_rules": {
-    "detect_profile_from_rom_identity": true,
+    "require_release_specific_profile": true,
+    "never_collapse_profiles_into_jp_ko_western": true,
+    "layout_family_is_implementation_detail_only": true,
+    "detect_profile_from_rom_title_revision_and_hash": true,
     "never_reinterpret_legacy_sram_in_place": true,
     "preserve_raw_legacy_import": true,
     "treat_bytes_after_first_32768_as_host_metadata": true,
-    "new_save_format_is_profile_independent": true
+    "new_runtime_save_format_is_profile_independent": true
   }
 }

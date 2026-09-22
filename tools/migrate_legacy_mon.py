@@ -13,25 +13,35 @@ LEGACY_TAIL_BYTES = 26
 EXPANDED_MON_BYTES = 64
 MOVE_COUNT = 4
 
-PROFILE_CODES = {"jp": 1, "ko": 2, "western": 3}
+PROFILE_CODES = {
+    "jp-rev0": 1,
+    "jp-rev1": 2,
+    "ko-rev0": 3,
+    "en-rev0": 4,
+    "de-rev0": 5,
+    "fr-rev0": 6,
+    "it-rev0": 7,
+    "es-rev0": 8,
+}
+PROFILE_REVISIONS = {
+    "jp-rev0": 0, "jp-rev1": 1, "ko-rev0": 0, "en-rev0": 0,
+    "de-rev0": 0, "fr-rev0": 0, "it-rev0": 0, "es-rev0": 0,
+}
 PROFILE_NAMES = {value: key for key, value in PROFILE_CODES.items()}
 
 FLAG_LEGACY_TAIL_VALID = 1 << 0
 FLAG_MIGRATED_FROM_GEN2 = 1 << 1
 MIGRATION_FLAGS = FLAG_LEGACY_TAIL_VALID | FLAG_MIGRATED_FROM_GEN2
 
-
 def _u16(value: int, field: str) -> int:
     if not 0 <= value <= 0xFFFF:
         raise ValueError(f"{field} must fit u16")
     return value
 
-
 def _u8(value: int, field: str) -> int:
     if not 0 <= value <= 0xFF:
         raise ValueError(f"{field} must fit u8")
     return value
-
 
 @dataclass(frozen=True)
 class ExpandedMonV1:
@@ -86,26 +96,20 @@ class ExpandedMonV1:
         out[48:64] = self.reserved
         return bytes(out)
 
-
-def migrate_legacy_box_mon(raw: bytes, *, profile: str, revision: int = 0) -> ExpandedMonV1:
+def migrate_legacy_box_mon(raw: bytes, *, profile: str) -> ExpandedMonV1:
     if len(raw) != LEGACY_BOXMON_BYTES:
         raise ValueError(f"legacy box mon must be exactly {LEGACY_BOXMON_BYTES} bytes")
     try:
         profile_code = PROFILE_CODES[profile]
+        revision = PROFILE_REVISIONS[profile]
     except KeyError as exc:
-        raise ValueError(f"unknown legacy profile {profile!r}") from exc
-
+        raise ValueError(f"unknown legacy release profile {profile!r}") from exc
     return ExpandedMonV1(
-        species_id=raw[0],
-        form_id=0,
-        item_id=raw[1],
-        ability_id=0,
+        species_id=raw[0], form_id=0, item_id=raw[1], ability_id=0,
         move_ids=(raw[2], raw[3], raw[4], raw[5]),
         legacy_tail=raw[LEGACY_TAIL_OFFSET:],
-        source_profile=profile_code,
-        source_revision=_u8(revision, "revision"),
+        source_profile=profile_code, source_revision=revision,
     )
-
 
 def deserialize_expanded_mon(raw: bytes) -> ExpandedMonV1:
     if len(raw) != EXPANDED_MON_BYTES:
@@ -116,24 +120,18 @@ def deserialize_expanded_mon(raw: bytes) -> ExpandedMonV1:
         item_id=struct.unpack_from("<H", raw, 4)[0],
         ability_id=struct.unpack_from("<H", raw, 6)[0],
         move_ids=tuple(struct.unpack_from("<H", raw, 8 + i * 2)[0] for i in range(MOVE_COUNT)),
-        legacy_tail=raw[16:42],
-        source_profile=raw[42],
-        source_revision=raw[43],
-        feature_flags=struct.unpack_from("<I", raw, 44)[0],
-        reserved=raw[48:64],
+        legacy_tail=raw[16:42], source_profile=raw[42], source_revision=raw[43],
+        feature_flags=struct.unpack_from("<I", raw, 44)[0], reserved=raw[48:64],
     )
-
 
 def downgrade_to_legacy_box_mon(mon: ExpandedMonV1) -> bytes:
     if mon.form_id != 0:
         raise ValueError("legacy Silver cannot represent a nonzero form_id")
     if mon.ability_id != 0:
         raise ValueError("legacy Silver cannot represent a nonzero ability_id")
-
     ids = [mon.species_id, mon.item_id, *mon.move_ids]
     if any(value > 0xFF for value in ids):
         raise ValueError("legacy Silver identity fields must fit one byte")
-
     out = bytearray(LEGACY_BOXMON_BYTES)
     out[0] = mon.species_id
     out[1] = mon.item_id
@@ -141,32 +139,23 @@ def downgrade_to_legacy_box_mon(mon: ExpandedMonV1) -> bytes:
     out[6:] = mon.legacy_tail
     return bytes(out)
 
-
 def main() -> int:
     ap = argparse.ArgumentParser(description="Migrate one raw Gen II 32-byte box Pokémon record")
     ap.add_argument("input", type=Path)
     ap.add_argument("output", type=Path)
     ap.add_argument("--profile", choices=sorted(PROFILE_CODES), required=True)
-    ap.add_argument("--revision", type=int, default=0)
-    ap.add_argument("--json", action="store_true", help="print migrated identity metadata")
+    ap.add_argument("--json", action="store_true")
     ns = ap.parse_args()
-
-    mon = migrate_legacy_box_mon(ns.input.read_bytes(), profile=ns.profile, revision=ns.revision)
+    mon = migrate_legacy_box_mon(ns.input.read_bytes(), profile=ns.profile)
     ns.output.write_bytes(mon.serialize())
-
     if ns.json:
         print(json.dumps({
-            "species_id": mon.species_id,
-            "form_id": mon.form_id,
-            "item_id": mon.item_id,
-            "ability_id": mon.ability_id,
-            "move_ids": list(mon.move_ids),
-            "source_profile": mon.source_profile_name,
-            "source_revision": mon.source_revision,
-            "record_bytes": EXPANDED_MON_BYTES,
+            "species_id":mon.species_id,"form_id":mon.form_id,"item_id":mon.item_id,
+            "ability_id":mon.ability_id,"move_ids":list(mon.move_ids),
+            "source_profile":mon.source_profile_name,"source_revision":mon.source_revision,
+            "record_bytes":EXPANDED_MON_BYTES,
         }, indent=2))
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())

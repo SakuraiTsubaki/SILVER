@@ -1,8 +1,13 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "target_generation": 10,
   "forward_compatible": true,
   "abi_version": 1,
+  "runtime": {
+    "platform": "Game Boy Advance",
+    "engine_family": "Generation III-derived modern remake core",
+    "legacy_gbc_runtime": false
+  },
   "evidence": {
     "rom_save_baseline": "analysis/rom-save-baseline.json",
     "legacy_save_profiles": "config/legacy_save_profiles.json",
@@ -33,34 +38,43 @@
     "move_bits": 32,
     "item_bits": 32
   },
-  "far_pointer": {
-    "logical_bank_bits": 16,
-    "offset_bits": 16,
-    "serialized_bytes": 4
-  },
   "save": {
     "legacy_raw_sram_bytes": 32768,
     "legacy_sram_bank_bytes": 8192,
     "legacy_sram_banks": 4,
     "observed_host_tail_bytes": 44,
-    "legacy_profiles": ["jp", "ko", "western"],
+    "legacy_profiles": [
+      "jp-rev0",
+      "jp-rev1",
+      "ko-rev0",
+      "en-rev0",
+      "de-rev0",
+      "fr-rev0",
+      "it-rev0",
+      "es-rev0"
+    ],
+    "legacy_profile_count": 8,
+    "release_identity_preserved": true,
     "format_version_bits": 16,
     "feature_flags_bits": 32,
     "species_and_form_are_separate": true,
     "migration_required": true,
     "legacy_import_is_read_only": true,
-    "expanded_backend": "undecided"
+    "native_runtime_profile": "JPN-SILVER-GBA",
+    "native_runtime_backend": "GBA versioned save; independent from legacy GBC SRAM layout"
   },
-  "rom": {
-    "legacy_cartridge_type": 16,
-    "legacy_mapper": "MBC3+TIMER+RAM+BATTERY",
-    "legacy_rom_bank_bytes": 16384,
-    "observed_japanese_rom_banks": 64,
-    "observed_localized_rom_banks": 128,
+  "legacy_rom": {
+    "runtime_role": "reference-and-import-only",
+    "cartridge_type": 16,
+    "mapper": "MBC3+TIMER+RAM+BATTERY",
+    "rom_bank_bytes": 16384,
+    "japanese_rom_banks": 64,
+    "localized_rom_banks": 128,
     "native_mbc3_rom_bank_ceiling": 128,
-    "expanded_mapper": "undecided",
-    "require_rtc_preservation": true,
-    "require_mapper_abstraction": true,
-    "logical_banks_must_not_alias_native_mbc3_banks": true
+    "preserve_rtc_semantics_in_remake": true
+  },
+  "addressing": {
+    "runtime_content_references_use_stable_ids": true,
+    "do_not_serialize_legacy_gbc_bank_addresses_as_runtime_identity": true
   }
 }
