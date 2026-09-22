@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "name": "ExpandedMonV1",
+  "record_bytes": 64,
+  "legacy_box_record_bytes": 32,
+  "byte_order": "little",
+  "legacy_identity": {
+    "species_offset": 0,
+    "item_offset": 1,
+    "moves_offset": 2,
+    "moves_count": 4,
+    "legacy_tail_offset": 6,
+    "legacy_tail_bytes": 26
+  },
+  "fields": [
+    {"name":"species_id","offset":0,"bytes":2},
+    {"name":"form_id","offset":2,"bytes":2},
+    {"name":"item_id","offset":4,"bytes":2},
+    {"name":"ability_id","offset":6,"bytes":2},
+    {"name":"move_ids","offset":8,"bytes":8,"count":4,"element_bytes":2},
+    {"name":"legacy_tail","offset":16,"bytes":26},
+    {"name":"source_profile","offset":42,"bytes":1},
+    {"name":"source_revision","offset":43,"bytes":1},
+    {"name":"feature_flags","offset":44,"bytes":4},
+    {"name":"reserved","offset":48,"bytes":16}
+  ],
+  "profile_codes": {
+    "jp": 1,
+    "ko": 2,
+    "western": 3
+  },
+  "feature_flags": {
+    "legacy_tail_valid": 0,
+    "migrated_from_gen2": 1
+  },
+  "migration_defaults": {
+    "form_id": 0,
+    "ability_id": 0,
+    "note": "Legacy Silver does not encode modern form or ability identities; migration must not infer them."
+  },
+  "downgrade_rules": {
+    "require_form_id_zero": true,
+    "require_ability_id_zero": true,
+    "require_species_item_moves_fit_u8": true,
+    "restore_legacy_tail_verbatim": true
+  }
+}

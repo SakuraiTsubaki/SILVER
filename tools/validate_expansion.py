@@ -8,6 +8,7 @@ ROOT=Path(__file__).resolve().parents[1]
 CONFIG=ROOT/"config"/"expansion.json"
 BASELINE=ROOT/"analysis"/"rom-save-baseline.json"
 PROFILES=ROOT/"config"/"legacy_save_profiles.json"
+XMON=ROOT/"config"/"expanded_mon_v1.json"
 
 def load(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
@@ -16,6 +17,7 @@ def main() -> int:
     cfg=load(CONFIG)
     baseline=load(BASELINE)
     profiles=load(PROFILES)
+    xmon=load(XMON)
 
     if cfg.get("target_generation") != 10 or not cfg.get("forward_compatible"):
         raise SystemExit("Generation 10 forward-compatible target is required")
@@ -66,6 +68,23 @@ def main() -> int:
     far=cfg["far_pointer"]
     if far.get("logical_bank_bits",0) < 16 or far.get("offset_bits",0) < 16 or far.get("serialized_bytes") != 4:
         raise SystemExit("extended far pointer ABI must be 16-bit bank + 16-bit offset")
+
+    if xmon.get("record_bytes") != 64 or xmon.get("legacy_box_record_bytes") != 32:
+        raise SystemExit("ExpandedMonV1 must remain 64 bytes over a 32-byte legacy box record")
+    if xmon["migration_defaults"] != {
+        "form_id": 0,
+        "ability_id": 0,
+        "note": "Legacy Silver does not encode modern form or ability identities; migration must not infer them."
+    }:
+        raise SystemExit("legacy migration must not infer form or ability")
+    fields={field["name"]:(field["offset"],field["bytes"]) for field in xmon["fields"]}
+    expected={
+        "species_id":(0,2),"form_id":(2,2),"item_id":(4,2),"ability_id":(6,2),
+        "move_ids":(8,8),"legacy_tail":(16,26),"source_profile":(42,1),
+        "source_revision":(43,1),"feature_flags":(44,4),"reserved":(48,16)
+    }
+    if fields != expected:
+        raise SystemExit("ExpandedMonV1 field layout changed without an ABI version change")
 
     print("SILVER ROM/save-driven expansion contract: OK")
     return 0
