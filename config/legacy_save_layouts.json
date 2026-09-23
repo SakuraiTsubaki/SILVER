@@ -1,0 +1,365 @@
+{
+  "schema_version": 1,
+  "profiles": {
+    "jp-rev0": {
+      "layout_family": "jp",
+      "language": "Japanese",
+      "party": {
+        "file_offset": 10302,
+        "bytes": 368,
+        "capacity": 6,
+        "party_mon_bytes": 48,
+        "ot_name_bytes": 6,
+        "nickname_bytes": 6
+      },
+      "active_box": {
+        "file_offset": 11536,
+        "bytes": 1352
+      },
+      "stored_boxes": {
+        "count": 9,
+        "mons_per_box": 30,
+        "box_bytes": 1354,
+        "ot_name_bytes": 6,
+        "nickname_bytes": 6,
+        "groups": [
+          {
+            "file_offset": 16384,
+            "count": 6
+          },
+          {
+            "file_offset": 24576,
+            "count": 3
+          }
+        ]
+      },
+      "primary_checksum": {
+        "start": 8201,
+        "end_inclusive": 11403,
+        "stored_offset": 11533,
+        "byte_order": "little"
+      },
+      "check_values": {
+        "first_offset": 8200,
+        "first_value": 99,
+        "second_offset": 11535,
+        "second_value": 127
+      }
+    },
+    "jp-rev1": {
+      "layout_family": "jp",
+      "language": "Japanese",
+      "party": {
+        "file_offset": 10302,
+        "bytes": 368,
+        "capacity": 6,
+        "party_mon_bytes": 48,
+        "ot_name_bytes": 6,
+        "nickname_bytes": 6
+      },
+      "active_box": {
+        "file_offset": 11536,
+        "bytes": 1352
+      },
+      "stored_boxes": {
+        "count": 9,
+        "mons_per_box": 30,
+        "box_bytes": 1354,
+        "ot_name_bytes": 6,
+        "nickname_bytes": 6,
+        "groups": [
+          {
+            "file_offset": 16384,
+            "count": 6
+          },
+          {
+            "file_offset": 24576,
+            "count": 3
+          }
+        ]
+      },
+      "primary_checksum": {
+        "start": 8201,
+        "end_inclusive": 11403,
+        "stored_offset": 11533,
+        "byte_order": "little"
+      },
+      "check_values": {
+        "first_offset": 8200,
+        "first_value": 99,
+        "second_offset": 11535,
+        "second_value": 127
+      }
+    },
+    "ko-rev0": {
+      "layout_family": "ko",
+      "language": "Korean",
+      "party": {
+        "file_offset": 10444,
+        "bytes": 428,
+        "capacity": 6,
+        "party_mon_bytes": 48,
+        "ot_name_bytes": 11,
+        "nickname_bytes": 11
+      },
+      "active_box": {
+        "file_offset": 11694,
+        "bytes": 1102
+      },
+      "stored_boxes": {
+        "count": 14,
+        "mons_per_box": 20,
+        "box_bytes": 1104,
+        "ot_name_bytes": 11,
+        "nickname_bytes": 11,
+        "groups": [
+          {
+            "file_offset": 16384,
+            "count": 7
+          },
+          {
+            "file_offset": 24576,
+            "count": 7
+          }
+        ]
+      },
+      "primary_checksum": {
+        "start": 8201,
+        "end_inclusive": 11690,
+        "stored_offset": 11691,
+        "byte_order": "little"
+      },
+      "check_values": {
+        "first_offset": 8200,
+        "first_value": 99,
+        "second_offset": 11693,
+        "second_value": 127
+      }
+    },
+    "en-rev0": {
+      "layout_family": "western",
+      "language": "English",
+      "party": {
+        "file_offset": 10378,
+        "bytes": 428,
+        "capacity": 6,
+        "party_mon_bytes": 48,
+        "ot_name_bytes": 11,
+        "nickname_bytes": 11
+      },
+      "active_box": {
+        "file_offset": 11628,
+        "bytes": 1102
+      },
+      "stored_boxes": {
+        "count": 14,
+        "mons_per_box": 20,
+        "box_bytes": 1104,
+        "ot_name_bytes": 11,
+        "nickname_bytes": 11,
+        "groups": [
+          {
+            "file_offset": 16384,
+            "count": 7
+          },
+          {
+            "file_offset": 24576,
+            "count": 7
+          }
+        ]
+      },
+      "primary_checksum": {
+        "start": 8201,
+        "end_inclusive": 11624,
+        "stored_offset": 11625,
+        "byte_order": "little"
+      },
+      "check_values": {
+        "first_offset": 8200,
+        "first_value": 99,
+        "second_offset": 11627,
+        "second_value": 127
+      }
+    },
+    "de-rev0": {
+      "layout_family": "western",
+      "language": "German",
+      "party": {
+        "file_offset": 10378,
+        "bytes": 428,
+        "capacity": 6,
+        "party_mon_bytes": 48,
+        "ot_name_bytes": 11,
+        "nickname_bytes": 11
+      },
+      "active_box": {
+        "file_offset": 11628,
+        "bytes": 1102
+      },
+      "stored_boxes": {
+        "count": 14,
+        "mons_per_box": 20,
+        "box_bytes": 1104,
+        "ot_name_bytes": 11,
+        "nickname_bytes": 11,
+        "groups": [
+          {
+            "file_offset": 16384,
+            "count": 7
+          },
+          {
+            "file_offset": 24576,
+            "count": 7
+          }
+        ]
+      },
+      "primary_checksum": {
+        "start": 8201,
+        "end_inclusive": 11624,
+        "stored_offset": 11625,
+        "byte_order": "little"
+      },
+      "check_values": {
+        "first_offset": 8200,
+        "first_value": 99,
+        "second_offset": 11627,
+        "second_value": 127
+      }
+    },
+    "fr-rev0": {
+      "layout_family": "western",
+      "language": "French",
+      "party": {
+        "file_offset": 10378,
+        "bytes": 428,
+        "capacity": 6,
+        "party_mon_bytes": 48,
+        "ot_name_bytes": 11,
+        "nickname_bytes": 11
+      },
+      "active_box": {
+        "file_offset": 11628,
+        "bytes": 1102
+      },
+      "stored_boxes": {
+        "count": 14,
+        "mons_per_box": 20,
+        "box_bytes": 1104,
+        "ot_name_bytes": 11,
+        "nickname_bytes": 11,
+        "groups": [
+          {
+            "file_offset": 16384,
+            "count": 7
+          },
+          {
+            "file_offset": 24576,
+            "count": 7
+          }
+        ]
+      },
+      "primary_checksum": {
+        "start": 8201,
+        "end_inclusive": 11624,
+        "stored_offset": 11625,
+        "byte_order": "little"
+      },
+      "check_values": {
+        "first_offset": 8200,
+        "first_value": 99,
+        "second_offset": 11627,
+        "second_value": 127
+      }
+    },
+    "it-rev0": {
+      "layout_family": "western",
+      "language": "Italian",
+      "party": {
+        "file_offset": 10378,
+        "bytes": 428,
+        "capacity": 6,
+        "party_mon_bytes": 48,
+        "ot_name_bytes": 11,
+        "nickname_bytes": 11
+      },
+      "active_box": {
+        "file_offset": 11628,
+        "bytes": 1102
+      },
+      "stored_boxes": {
+        "count": 14,
+        "mons_per_box": 20,
+        "box_bytes": 1104,
+        "ot_name_bytes": 11,
+        "nickname_bytes": 11,
+        "groups": [
+          {
+            "file_offset": 16384,
+            "count": 7
+          },
+          {
+            "file_offset": 24576,
+            "count": 7
+          }
+        ]
+      },
+      "primary_checksum": {
+        "start": 8201,
+        "end_inclusive": 11624,
+        "stored_offset": 11625,
+        "byte_order": "little"
+      },
+      "check_values": {
+        "first_offset": 8200,
+        "first_value": 99,
+        "second_offset": 11627,
+        "second_value": 127
+      }
+    },
+    "es-rev0": {
+      "layout_family": "western",
+      "language": "Spanish",
+      "party": {
+        "file_offset": 10378,
+        "bytes": 428,
+        "capacity": 6,
+        "party_mon_bytes": 48,
+        "ot_name_bytes": 11,
+        "nickname_bytes": 11
+      },
+      "active_box": {
+        "file_offset": 11628,
+        "bytes": 1102
+      },
+      "stored_boxes": {
+        "count": 14,
+        "mons_per_box": 20,
+        "box_bytes": 1104,
+        "ot_name_bytes": 11,
+        "nickname_bytes": 11,
+        "groups": [
+          {
+            "file_offset": 16384,
+            "count": 7
+          },
+          {
+            "file_offset": 24576,
+            "count": 7
+          }
+        ]
+      },
+      "primary_checksum": {
+        "start": 8201,
+        "end_inclusive": 11624,
+        "stored_offset": 11625,
+        "byte_order": "little"
+      },
+      "check_values": {
+        "first_offset": 8200,
+        "first_value": 99,
+        "second_offset": 11627,
+        "second_value": 127
+      }
+    }
+  }
+}

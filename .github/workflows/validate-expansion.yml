@@ -4,12 +4,16 @@ on:
   push:
     paths:
       - "analysis/rom-save-baseline.json"
+      - "analysis/save-structure-audit.json"
       - "config/expansion.json"
       - "config/legacy_save_profiles.json"
+      - "config/legacy_save_layouts.json"
+      - "config/gba_save_import_v1.json"
       - "config/expanded_mon_v1.json"
       - "engine/abi/**"
       - "tools/inspect_silver_inputs.py"
       - "tools/detect_legacy_profile.py"
+      - "tools/decode_legacy_save.py"
       - "tools/migrate_legacy_mon.py"
       - "tools/validate_expansion.py"
       - "tests/**"
@@ -17,12 +21,16 @@ on:
   pull_request:
     paths:
       - "analysis/rom-save-baseline.json"
+      - "analysis/save-structure-audit.json"
       - "config/expansion.json"
       - "config/legacy_save_profiles.json"
+      - "config/legacy_save_layouts.json"
+      - "config/gba_save_import_v1.json"
       - "config/expanded_mon_v1.json"
       - "engine/abi/**"
       - "tools/inspect_silver_inputs.py"
       - "tools/detect_legacy_profile.py"
+      - "tools/decode_legacy_save.py"
       - "tools/migrate_legacy_mon.py"
       - "tools/validate_expansion.py"
       - "tests/**"

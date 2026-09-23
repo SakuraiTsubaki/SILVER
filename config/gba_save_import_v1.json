@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "name": "LegacySilverToGbaImportV1",
+  "runtime_platform": "Game Boy Advance",
+  "source_profiles": [
+    "jp-rev0",
+    "jp-rev1",
+    "ko-rev0",
+    "en-rev0",
+    "de-rev0",
+    "fr-rev0",
+    "it-rev0",
+    "es-rev0"
+  ],
+  "source_profile_is_required": true,
+  "identity_fields": {
+    "species_id": "u16",
+    "form_id": "u16",
+    "item_id": "u16",
+    "ability_id": "u16",
+    "move_ids": "u16[4]"
+  },
+  "legacy_defaults": {
+    "form_id": 0,
+    "ability_id": 0
+  },
+  "containers": {
+    "party": {
+      "capacity": 6,
+      "mon_model": "ExpandedMonV1"
+    },
+    "pc_boxes": {
+      "source_capacity_is_profile_specific": true,
+      "mon_model": "ExpandedMonV1"
+    },
+    "active_box": {
+      "source_capacity_is_profile_specific": true,
+      "mon_model": "ExpandedMonV1"
+    }
+  },
+  "raw_preservation": {
+    "legacy_mon_tail": true,
+    "ot_name_bytes": true,
+    "nickname_bytes": true,
+    "source_profile": true
+  },
+  "rules": [
+    "The importer is read-only with respect to legacy SAV bytes.",
+    "Exact release provenance is preserved even when layouts share a decoder implementation.",
+    "No modern form or ability is inferred from Generation II data.",
+    "Legacy byte-sized species/item/move IDs are widened numerically without remapping at import time."
+  ]
+}

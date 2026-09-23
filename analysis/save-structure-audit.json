@@ -1,0 +1,345 @@
+{
+  "schema_version": 1,
+  "source": "user-supplied Silver SAV files",
+  "profile_count": 8,
+  "profiles": [
+    {
+      "profile_id": "jp-rev0",
+      "save_file": "Pocket Monsters Gin (Japan).sav",
+      "save_sha256": "529b6dbfdfdb7a67679c0c8fb68c3930786112d8591f666e6c1a9f4fd4d6492c",
+      "raw_sram_sha256": "ab65dbd5d39949dff5315aefe88bbaa70dd2a1b760d3322e79f2f0865732b0e8",
+      "primary_checksum": {
+        "computed": 36819,
+        "stored": 36819,
+        "valid": true,
+        "check_value_1": 99,
+        "check_value_1_valid": true,
+        "check_value_2": 127,
+        "check_value_2_valid": true
+      },
+      "party": {
+        "count": 0,
+        "terminator_valid": true
+      },
+      "active_box": {
+        "count": 0,
+        "terminator_valid": true,
+        "raw_sha256": "3acc736cab51796cc4f32f8a58863c4a1d8436051e710ff7c82df50fb2e271a4"
+      },
+      "stored_boxes": {
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "all_terminators_valid": true
+      }
+    },
+    {
+      "profile_id": "jp-rev1",
+      "save_file": "Pocket Monsters Gin (Japan) (Rev A).sav",
+      "save_sha256": "b0af4d8d8d424695864238c3194f01bff35b2946f8272d8e9bb2ab9edd39ec5e",
+      "raw_sram_sha256": "e2ddee41e1a78252223743cb18e3a940f0eee9e0647a1466bd88872bfa2cf923",
+      "primary_checksum": {
+        "computed": 36936,
+        "stored": 36936,
+        "valid": true,
+        "check_value_1": 99,
+        "check_value_1_valid": true,
+        "check_value_2": 127,
+        "check_value_2_valid": true
+      },
+      "party": {
+        "count": 0,
+        "terminator_valid": true
+      },
+      "active_box": {
+        "count": 0,
+        "terminator_valid": true,
+        "raw_sha256": "3acc736cab51796cc4f32f8a58863c4a1d8436051e710ff7c82df50fb2e271a4"
+      },
+      "stored_boxes": {
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "all_terminators_valid": true
+      }
+    },
+    {
+      "profile_id": "ko-rev0",
+      "save_file": "Pocket Monsters Eun (Korea).sav",
+      "save_sha256": "54bdd67be8adf27a1b62e6b2b8168635ef73b37f22c3c83dbc17c34969dfce98",
+      "raw_sram_sha256": "4428380406b976ad934b22940f0b94eaea4b5fcebb542779be12ab7c7962d5b2",
+      "primary_checksum": {
+        "computed": 39053,
+        "stored": 39053,
+        "valid": true,
+        "check_value_1": 99,
+        "check_value_1_valid": true,
+        "check_value_2": 127,
+        "check_value_2_valid": true
+      },
+      "party": {
+        "count": 0,
+        "terminator_valid": true
+      },
+      "active_box": {
+        "count": 0,
+        "terminator_valid": true,
+        "raw_sha256": "280a1952f1da65159eca4418b4ac8f2cd456ae6eca9b94b997723f181808900c"
+      },
+      "stored_boxes": {
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "all_terminators_valid": true
+      }
+    },
+    {
+      "profile_id": "en-rev0",
+      "save_file": "Pokemon - Silver Version (USA, Europe).sav",
+      "save_sha256": "476568f1bc1ab878ba9d0d718a32bb4453ecf15a1b5da517aa9d035c410c0b32",
+      "raw_sram_sha256": "ac491e5f818e645a5851c9d79f0795782a9651edbf86ca13fb7180efadf41366",
+      "primary_checksum": {
+        "computed": 44279,
+        "stored": 44279,
+        "valid": true,
+        "check_value_1": 99,
+        "check_value_1_valid": true,
+        "check_value_2": 127,
+        "check_value_2_valid": true
+      },
+      "party": {
+        "count": 0,
+        "terminator_valid": true
+      },
+      "active_box": {
+        "count": 0,
+        "terminator_valid": true,
+        "raw_sha256": "280a1952f1da65159eca4418b4ac8f2cd456ae6eca9b94b997723f181808900c"
+      },
+      "stored_boxes": {
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "all_terminators_valid": true
+      }
+    },
+    {
+      "profile_id": "de-rev0",
+      "save_file": "Pokemon - Silberne Edition (Germany).sav",
+      "save_sha256": "4c4da644fe8a8883691527b048eee2310ecfd15cba6ec269c259870964600b08",
+      "raw_sram_sha256": "2880c17d1b30eed9e492b84ae63d0d60256ecf53236be483dca0816ca9b4c599",
+      "primary_checksum": {
+        "computed": 44324,
+        "stored": 44324,
+        "valid": true,
+        "check_value_1": 99,
+        "check_value_1_valid": true,
+        "check_value_2": 127,
+        "check_value_2_valid": true
+      },
+      "party": {
+        "count": 0,
+        "terminator_valid": true
+      },
+      "active_box": {
+        "count": 0,
+        "terminator_valid": true,
+        "raw_sha256": "280a1952f1da65159eca4418b4ac8f2cd456ae6eca9b94b997723f181808900c"
+      },
+      "stored_boxes": {
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "all_terminators_valid": true
+      }
+    },
+    {
+      "profile_id": "fr-rev0",
+      "save_file": "Pokemon - Version Argent (France).sav",
+      "save_sha256": "f96e8abe35a63beb072bd24d5221c6a5996cc7a32ec4250fd0e38fd2d57eb81c",
+      "raw_sram_sha256": "9b01f4d426eac928b946b4eb7c903b5dd9938ddcf927253b56e34d18f6f6904e",
+      "primary_checksum": {
+        "computed": 47685,
+        "stored": 47685,
+        "valid": true,
+        "check_value_1": 99,
+        "check_value_1_valid": true,
+        "check_value_2": 127,
+        "check_value_2_valid": true
+      },
+      "party": {
+        "count": 0,
+        "terminator_valid": true
+      },
+      "active_box": {
+        "count": 0,
+        "terminator_valid": true,
+        "raw_sha256": "280a1952f1da65159eca4418b4ac8f2cd456ae6eca9b94b997723f181808900c"
+      },
+      "stored_boxes": {
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "all_terminators_valid": true
+      }
+    },
+    {
+      "profile_id": "it-rev0",
+      "save_file": "Pokemon - Versione Argento (Italy).sav",
+      "save_sha256": "63193ddc458892402bddd3e332136792ee37181b67ce7a56d51e1b538176a17c",
+      "raw_sram_sha256": "08dfd4af41681e61642212d00bae204ccaaaedefb34fab70b65c7dab03997ff4",
+      "primary_checksum": {
+        "computed": 43870,
+        "stored": 43870,
+        "valid": true,
+        "check_value_1": 99,
+        "check_value_1_valid": true,
+        "check_value_2": 127,
+        "check_value_2_valid": true
+      },
+      "party": {
+        "count": 0,
+        "terminator_valid": true
+      },
+      "active_box": {
+        "count": 0,
+        "terminator_valid": true,
+        "raw_sha256": "280a1952f1da65159eca4418b4ac8f2cd456ae6eca9b94b997723f181808900c"
+      },
+      "stored_boxes": {
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "all_terminators_valid": true
+      }
+    },
+    {
+      "profile_id": "es-rev0",
+      "save_file": "Pokemon - Edicion Plata (Spain).sav",
+      "save_sha256": "45fc0d65967071ce63b4d60b0769379a761297a60728dadcad7fa6fbfd6c11e6",
+      "raw_sram_sha256": "1a76f3f47f19fed6a2fad3fc8cfcf1c6ba405e67ff07152a2409927ffc15854f",
+      "primary_checksum": {
+        "computed": 47764,
+        "stored": 47764,
+        "valid": true,
+        "check_value_1": 99,
+        "check_value_1_valid": true,
+        "check_value_2": 127,
+        "check_value_2_valid": true
+      },
+      "party": {
+        "count": 0,
+        "terminator_valid": true
+      },
+      "active_box": {
+        "count": 0,
+        "terminator_valid": true,
+        "raw_sha256": "280a1952f1da65159eca4418b4ac8f2cd456ae6eca9b94b997723f181808900c"
+      },
+      "stored_boxes": {
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "all_terminators_valid": true
+      }
+    }
+  ],
+  "notes": [
+    "The supplied saves happen to have empty party/active/stored boxes in the decoded regions; this describes only these samples, not every save for each release.",
+    "Release provenance remains eight-way even when multiple releases share a binary layout family."
+  ]
+}
