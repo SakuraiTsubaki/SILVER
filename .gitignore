@@ -1,0 +1,8 @@
+.tools/
+
+# Proprietary game/flash/save binaries must never be committed.
+*.gb
+*.gbc
+*.gba
+*.sav
+*.srm
