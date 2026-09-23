@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "upstream": {
+    "repository": "rh-hideout/pokeemerald-expansion",
+    "commit": "75b806a3ab57a81ff1eb6179288981f0b3cc3050"
+  },
+  "persistent_box_packing": {
+    "species_bits": 11,
+    "species_max_encoded": 2047,
+    "held_item_bits": 10,
+    "held_item_max_encoded": 1023,
+    "move_bits": 11,
+    "move_max_encoded": 2047,
+    "move_slots": 4,
+    "tera_type_bits": 5,
+    "tera_type_max_encoded": 31,
+    "ability_slot_bits": 2,
+    "ability_slot_max_encoded": 3
+  },
+  "creation_template": {
+    "species_bits": 16,
+    "held_item_bits": 16,
+    "move_bits": 16,
+    "note": "PokemonTemplate already accepts u16 species, heldItem and moves at the pinned commit."
+  },
+  "pc_storage": {
+    "total_boxes": 14,
+    "rows": 5,
+    "columns": 6,
+    "mons_per_box": 30,
+    "total_mon_slots": 420
+  },
+  "flash_save": {
+    "sector_data_bytes": 3968,
+    "pokemon_storage_sector_start": 5,
+    "pokemon_storage_sector_end": 13,
+    "pokemon_storage_sectors": 9,
+    "pokemon_storage_payload_capacity_bytes": 35712,
+    "compile_time_size_assert": true
+  },
+  "conclusions": [
+    "The persistent BoxPokemon packing is narrower than the SILVER Generation-10 16-bit identity ABI.",
+    "Battle/template paths are not the first persistence bottleneck; BoxPokemon and PokemonStorage are.",
+    "Widening persistent IDs changes PokemonStorage size and must be validated against the 9-sector save allocation.",
+    "Form IDs in SILVER's import model must be resolved through the target core's form/species tables rather than guessed during Gen II migration."
+  ]
+}
