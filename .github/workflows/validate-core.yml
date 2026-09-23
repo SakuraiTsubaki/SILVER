@@ -48,3 +48,24 @@ jobs:
           UNUSED_ERROR: 1
           DEPRECATED_ERROR: 1
         run: make -j$(nproc) -O all
+
+
+      - name: Apply +32-bit per-BoxPokemon Generation-10 storage probe
+        run: python tools/probe_gen10_storage_capacity.py .tools/pokeemerald-expansion
+
+      - name: Build storage-capacity probe
+        id: storage_probe
+        continue-on-error: true
+        working-directory: .tools/pokeemerald-expansion
+        env:
+          GAME_VERSION: EMERALD
+          GAME_REVISION: 0
+          GAME_LANGUAGE: ENGLISH
+          COMPARE: 0
+          UNUSED_ERROR: 1
+          DEPRECATED_ERROR: 1
+        run: make -j$(nproc) -O all
+
+      - name: Record storage probe outcome
+        if: always()
+        run: echo "SILVER_BOX_ID_EXTENSION_PROBE=${{ steps.storage_probe.outcome }}" >> "$GITHUB_STEP_SUMMARY"
